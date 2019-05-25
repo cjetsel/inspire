@@ -1,3 +1,69 @@
+*{
+  outline: 1px dashed blueviolet;
+}
+.row{
+  outline: 3px solid seagreen;
+}
+
+body{
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    height: 100%, 100%;
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.95);
+}
+
+main{
+  height: 100vh;
+}
+
+#bg-image{
+  background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat,  no-repeat;
+}
+
+.bg-gradient{
+background: rgba(255, 255, 255, 0.2);
+}
+
+/* body{
+  background-image: url("https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+} */
+
+.list-group-item {
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  padding: 0.3rem .5rem;
+}
+
+.icon{
+  width: 2rem;
+  margin-right: 17%;
+}
+
+.button{
+  max-width: 7%;
+  border-radius: 50%;
+}
+
+.btn{
+  width: 2rem;
+}
+
+.btn-outline-light{
+border: none;
+}
+
+.btn-outline-light:hover{
+border: none;
+background-color: #bff9918f;
+}
+.button:hover{
+
+}
+
+
 #todo-error{
   color: red;
   font-size: 2em;

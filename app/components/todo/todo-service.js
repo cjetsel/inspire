@@ -1,3 +1,5 @@
+import ToDo from "../../models/todo.js";
+
 // @ts-ignore
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
@@ -23,6 +25,10 @@ export default class TodoService {
 		return _state.error
 	}
 
+	get ToDo() {
+		return _state.todos;
+	}
+
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
 	}
@@ -31,7 +37,7 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				// WHAT DO YOU DO WITH THE RESPONSE?
+				_setState('todos', new ToDo(res.data))
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

@@ -2,6 +2,17 @@ import QuoteService from "./quote-service.js";
 
 let _qs = new QuoteService()
 
-export default class QuoteController {
+function drawQuote() {
+  let quote = _qs.Quote;
+  let template = quote.QuoteTemplate();
+  console.log("We got quotes");
+  document.getElementById("quote").innerHTML = template;
 
+}
+
+export default class QuoteController {
+  constructor() {
+    _qs.addSubscriber('quote', drawQuote)
+    _qs.getQuote()
+  }
 }
