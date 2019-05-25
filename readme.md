@@ -115,7 +115,7 @@ The positioning of elements on the page is not the absolute most crucial thing f
 
 ## REQUIREMENTS:
  - `Visualization`
-   - The data from the services are each rendered. 
+  X - The data from the services are each rendered. 
         X - Quote (quote and author)
         X- Image (only the image is required, however feel free to include other data)
         X- Weather (The temp is displayed, feel free to add other pieces)
@@ -125,9 +125,9 @@ The positioning of elements on the page is not the absolute most crucial thing f
  - `Functionality`
   X  - Todo's can be added to a list (POST)
     - Todo's can be removed (DELETE)
-    - Todo's can be marked complete (PUT)
+  X  - Todo's can be marked complete (PUT)
     - The todolist shows the total count of tasks currently being tracked
-    - The todolist takes advantage of the TodoService to provide persistent data
+   X- The todolist takes advantage of the TodoService to provide persistent data
 
 ### Finished?
 When You are finished please submit the link to the project in the backpack
