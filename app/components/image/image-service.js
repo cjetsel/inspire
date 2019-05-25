@@ -41,8 +41,6 @@ export default class ImageService {
 	getImageData() {
 		imgApi.get()
 			.then(res => {
-				console.log(res)
-				debugger
 				let imgData = new Image(res.config)
 				_setState('apiImages', imgData)
 			})

@@ -5,14 +5,30 @@ const _todoService = new TodoService()
 function _drawTodos() {
 	let toDo = _todoService.ToDo;
 	let template = '';
+	let templateComplete = '';
 	for (let i = 0; i < toDo.length; i++) {
 		let myToDo = toDo[i]
-		template += myToDo.AddTemplate()
+		if (!myToDo.completed) {
+			template += myToDo.AddTemplate()
+			console.log("not complete")
+		} else if (myToDo.completed) {
+			templateComplete += myToDo.AddCompletedTemplate()
+			console.log("complete")
+		}
+		document.getElementById('todo-new').innerHTML = template;
+		document.getElementById('todo-complete').innerHTML = templateComplete;
 	}
-	console.log("theres todos")
-	document.getElementById('todo-new').innerHTML = template;
 }
 
+// function _drawCompletedTodo() {
+// 	let toDo = _todoService.ToDo;
+// 	let template = '';
+// 	for (let i = 0; i < toDo.length; i++) {
+// 		let myToDo = toDo[i]
+// 		template += myToDo.AddCompletedTemplate()
+// 	}
+// 	document.getElementById('todo-complete').innerHTML = template;
+// }
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
@@ -25,17 +41,22 @@ export default class TodoController {
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
 		_todoService.addSubscriber('todos', _drawTodos)
+
 		// Don't forget to add your subscriber
 	}
 
-	addTodo(e) {
-		e.preventDefault()
-		var form = e.target
+	addTodo(event) {
+		event.preventDefault()
+		var form = event.target
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.description.value
 		}
-
+		form.reset()
 		_todoService.addTodo(todo)
+	}
+
+	completeToDo(id) {
+		_todoService.toggleTodoStatus(id)
 	}
 
 	toggleTodoStatus(todoId) {

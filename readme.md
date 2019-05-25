@@ -119,11 +119,11 @@ The positioning of elements on the page is not the absolute most crucial thing f
         X - Quote (quote and author)
         X- Image (only the image is required, however feel free to include other data)
         X- Weather (The temp is displayed, feel free to add other pieces)
-        - Todo (x the new todo form exists, and any todos are rendered *GET*)
+        X- Todo (x the new todo form exists, and any todos are rendered *GET*)
    -X The image should be on large display with at least one other element positioned over the top of the image.
-   - A form to add a new todo can be accessed and when submitted the page does not reload
+  X - A form to add a new todo can be accessed and when submitted the page does not reload
  - `Functionality`
-    - Todo's can be added to a list (POST)
+  X  - Todo's can be added to a list (POST)
     - Todo's can be removed (DELETE)
     - Todo's can be marked complete (PUT)
     - The todolist shows the total count of tasks currently being tracked
