@@ -8,140 +8,92 @@
 	<title>Inspire</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Codystar|Gravitas+One|Lobster|Montserrat&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Meddon&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Forum|Thasadith&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="container-fluid text-center text-light" id="bg-image">
+<body class="container-fluid text-center text-light align-self-center" id="bg-image">
 	<header class="container-fluid">
 		<div class="row">
-			<div class="col">Open To Do</div>
-			<div class="col-6">
-				<div class="row justify-content-around">
-					main
+			<div class="col align-self-center">
+				<div class="row mt-4 text-center justify-content-center align-self-center">
+					<div class="col-12">
+						<h2 class="pink" id="clock"></h2>
+					</div>
 				</div>
 			</div>
-			<div class="col">Closed to Do</div>
+			<div class="col-6">
+				<div class="row mt-4 text-center justify-content-center h-10">
+				</div>
+			</div>
+			<div class="col align-self-center" id="weather">
+			</div>
 		</div>
 	</header>
-	<main class="container-fluid fill">
+	<main class="container-fluid fill align-self-center">
 		<div class="row">
 			<div class="col-3">
-				<div class="row justify-content-center">
-					<form onsubmit="app.controllers.todoController.addTodo(event)">
-						<div class="col-2 p-0">
-							<button class="btn btn-outline-light p-0 mr-2 rounded-circle" type="submit"><img
+				<div class="row">
+					<div class="col-12">
+						<h3 class="cursive">To Do</h3>
+					</div>
+				</div>
+				<form onsubmit="app.controllers.todoController.addTodo(event)">
+					<div class="form-row align-items-center">
+						<div class="col-2 p-0 ml-1">
+							<button class="btn btn-outline-light p-0 mr-2 yellow rounded-circle" type="submit"><img
 									src="assets/img/svg/002-add.svg" class="img-fluid icon" alt=""></button>
 						</div>
 						<div class="col-9 pl-0 mb-1">
-							<input
-								class="form-control form-control-sm border-0 border-bottom border-primary bg-transparent text-white"
-								type="text" name="description" placeholder="Add To Do Item">
-					</form>
+							<input class="form-control form-control-sm border-0 border-bottom border-danger bg-transparent text-white"
+								type="text" name="description" placeholder="Add To Do Item"> </div>
+					</div>
+				</form>
+
+				<div class="row justify-content-center">
+					<ul class="list-group bg-gradient list-group-flush col-11 p-0" id="todo-new">
+
+					</ul>
 				</div>
+				<div class="row justify-content-center">spacer</div>
 			</div>
-			<div class="row justify-content-center">
-				<ul class="list-group bg-gradient list-group-flush col-11 p-0" id="todo-new">
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-				</ul>
-			</div>
-			<div class="row justify-content-center">spacer</div>
-		</div>
-		<div class="col-6">
-			<div class="row justify-content-around">
-				<div class="col-2" id="weather-img"><img src="assets/img/svg/006-sun.svg" class="img-fluid" alt=""></div>
-				<div class="col-6 align-self-center" id="weather">
+			<div class="col-6">
+				<div class="row justify-content-center">
+					<div class="jumbotron bg-transparent">
+						<h1 class="display-4 heading">Hello Chelsey</h1>
+						<h2 class="display-4 heading"><img src="assets/img/svg/carnation.svg" class="img-adjust" alt=""></h2>
+					</div>
+				</div>
+				<div class="row justify-content-center" id="quote">
 
 				</div>
 			</div>
-			<div class="row justify-content-center">
-				<div class="jumbotron bg-transparent">
-					<h1 class="display-4">Hello, world!</h1>
-					<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-						to featured
-						content or information.</p>
-					<hr class="my-4">
-					<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+			<div class="col-3">
+				<div class="row">
+					<div class="col-12">
+						<h3 class="cursive">Complete</h3>
+					</div>
 				</div>
+				<div class="row justify-content-center align-self-end">
+					<div class="col-4"><img src="assets/img/svg/001-delete.svg" class="img-fluid icon" alt=""></div>
+				</div>
+				<div class="row justify-content-center">
+					<ul class="list-group bg-gradient list-group-flush col-11 p-0" id="todo-complete">
+
+					</ul>
+				</div>
+				<div class="row justify-content-center">spacer</div>
 			</div>
-			<div class="row justify-content-center" id="quote">
-				quote
-			</div>
-		</div>
-		<div class="col-3">
-			<div class="row justify-content-center align-self-end">
-				<div class="col-4"><img src="assets/img/svg/001-delete.svg" class="img-fluid icon" alt=""></div>
-			</div>
-			<div class="row justify-content-center">
-				<ul class="list-group bg-gradient list-group-flush col-11 p-0" id="todo-complete">
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-					<li class="list-group-item bg-transparent  d-flex justify-content-left align-items-center">
-						<button class="btn btn-outline-light p-0 mr-2 rounded-circle"
-							onclick="app.controllers.todo-controller.Complete()"><img src="assets/img/svg/025-favorite.svg"
-								class="img-fluid " alt="complete"></button>
-						Eat Breakfast
-					</li>
-				</ul>
-			</div>
-			<div class="row justify-content-center">spacer</div>
 		</div>
 		</div>
 	</main>
 	<footer class="container-fluid"></footer>
 
-
-
-
-
-
-
-
-
-	<!-- 
-
-	<div id="weather">
-		Your Weather Template
-	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
-	</div> -->
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

@@ -10,10 +10,8 @@ function _drawTodos() {
 		let myToDo = toDo[i]
 		if (!myToDo.completed) {
 			template += myToDo.AddTemplate()
-			console.log("not complete")
 		} else if (myToDo.completed) {
 			templateComplete += myToDo.AddCompletedTemplate()
-			console.log("complete")
 		}
 		document.getElementById('todo-new').innerHTML = template;
 		document.getElementById('todo-complete').innerHTML = templateComplete;

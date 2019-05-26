@@ -7,7 +7,7 @@ export default class Quote {
 
   QuoteTemplate() {
     return `
-    <h6>${this.quote}</h6>
-    <h6>${this.author}</h6>`
+    <h6 class="quote">${this.quote}</h6>
+    <footer class="blockquote-footer quote">${this.author}</footer>`
   }
 }

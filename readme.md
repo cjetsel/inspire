@@ -124,7 +124,7 @@ The positioning of elements on the page is not the absolute most crucial thing f
   X - A form to add a new todo can be accessed and when submitted the page does not reload
  - `Functionality`
   X  - Todo's can be added to a list (POST)
-    - Todo's can be removed (DELETE)
+   X - Todo's can be removed (DELETE)
   X  - Todo's can be marked complete (PUT)
     - The todolist shows the total count of tasks currently being tracked
    X- The todolist takes advantage of the TodoService to provide persistent data

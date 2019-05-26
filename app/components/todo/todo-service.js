@@ -33,12 +33,10 @@ export default class TodoService {
 	}
 
 	getTodos() {
-		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
 				let data = res.data.data.map(d => new ToDo(d))
 				_setState('todos', data)
-				console.log(_state)
 			})
 
 			.catch(err => console.error(err))

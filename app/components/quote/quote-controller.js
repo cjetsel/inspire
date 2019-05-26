@@ -5,7 +5,6 @@ let _qs = new QuoteService()
 function drawQuote() {
   let quote = _qs.Quote;
   let template = quote.QuoteTemplate();
-  console.log("We got quotes");
   document.getElementById("quote").innerHTML = template;
 
 }

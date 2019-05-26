@@ -29,7 +29,6 @@ export default class QuoteService {
 	}
 
 	getQuote() {
-		console.log('Initiating Quote Sequence')
 		_quoteApi.get().then(res => {
 			_setState('quote', new Quote(res.data))
 		})

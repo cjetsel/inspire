@@ -1,20 +1,52 @@
 *{
   outline: 1px dashed blueviolet;
 }
-.row{
-  outline: 3px solid seagreen;
+
+.heading{
+font-family: 'Meddon', cursive;
+color: #fffaeb;
+}
+
+.cursive{
+  font-family: 'Codystar', cursive;
+  color: #ff5064;
+  text-shadow: 0px 0px 2px #f8ebc8;
+}
+
+.quote{
+font-family: 'Thasadith', sans-serif;
+text-shadow: 0px 0px 5px #5e1e25;
+
+}
+
+.img-adjust{
+  height: fit-content;
+}
+
+.pink{
+  color: #ff7d91;
 }
 
 body{
+  font-family: 'Thasadith', sans-serif;
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     height: 100%, 100%;
-    text-shadow: 0px 0px 4px rgba(0,0,0,0.95);
+    color: #fffaeb;
+    text-shadow: 0px 0px 5px #f8ebc8b8;
 }
 
 main{
   height: 100vh;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+.blockquote-footer{
+color: #f3db9b;
 }
 
 #bg-image{
@@ -25,6 +57,10 @@ main{
 
 .bg-gradient{
 background: rgba(255, 255, 255, 0.2);
+}
+
+.h-10{
+  height: 10vw;
 }
 
 /* body{
@@ -55,10 +91,27 @@ background: rgba(255, 255, 255, 0.2);
 border: none;
 }
 
-.btn-outline-light:hover{
-border: none;
-background-color: #bff9918f;
+.blue:hover{
+  border: none;
+  background-color: #ff5064;!important;
 }
+
+.green:hover{
+border: none;
+background-color: #8ddb4df8;
+}
+
+.yellow:hover{
+border: none;
+background-color: #f3db9b!important;
+}
+
+.red:hover{
+border: none;
+background-color: #ff5064!important;
+}
+
+
 .button:hover{
 
 }
