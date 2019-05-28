@@ -18,6 +18,13 @@ function _drawTodos() {
 	}
 }
 
+function _drawNum() {
+	let incomplete = _todoService.ToDoLength;
+	let complete = _todoService.CompleteLength;
+	document.getElementById('complete').innerText = `${complete}`
+	document.getElementById('incomplete').innerText = `${incomplete}`
+}
+
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
 }
@@ -27,6 +34,7 @@ export default class TodoController {
 		_todoService.addSubscriber('error', _drawError);
 		_todoService.getTodos();
 		_todoService.addSubscriber('todos', _drawTodos);
+		_todoService.addSubscriber('todos', _drawNum)
 	}
 
 	addTodo(event) {

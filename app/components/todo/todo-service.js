@@ -29,6 +29,16 @@ export default class TodoService {
 		return _state.todos;
 	}
 
+	get ToDoLength() {
+		let todo = _state.todos.filter(todo => !todo.completed)
+		return todo.length;
+	}
+
+	get CompleteLength() {
+		let todo = _state.todos.filter(todo => todo.completed)
+		return todo.length;
+	}
+
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn);
 	}

@@ -6,6 +6,7 @@ export default class ClockService {
       var minutes = currentTime.getMinutes();
       var seconds = currentTime.getSeconds();
       var meridiem = "AM";
+      var welcomeStatement = "Good morning"
       if (seconds < 10) {
         seconds = "0" + seconds;
       };
@@ -16,7 +17,11 @@ export default class ClockService {
       if (hours > 12) {
         hours = hours - 12;
         meridiem = "PM";
+        welcomeStatement = "Good afternoon"
       };
+      if (hours > 17) {
+        welcomeStatement = "Good evening"
+      }
       if (hours === 0) {
         hours = 12;
       };
@@ -24,7 +29,9 @@ export default class ClockService {
         hours = "0" + hours;
       };
       var clockDiv = document.getElementById('clock');
+      var welcomeDiv = document.getElementById('welcome');
       clockDiv.innerText = `${hours}:${minutes}:${seconds} ${meridiem}`;
+      welcomeDiv.innerText = `${welcomeStatement}`;
     };
     displayTime();
     setInterval(displayTime, 1000);
