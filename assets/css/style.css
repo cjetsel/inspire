@@ -60,6 +60,11 @@ color: #f3db9b;
 background: rgba(255, 255, 255, 0.2);
 }
 
+.img-weather{
+  max-width: 160%;
+  height: auto;
+}
+
 .h-10{
   height: 5vw;
 }

@@ -15,7 +15,7 @@ export default class Weather {
     let f = this.ToFahrenheit(this.kelvin) + "°";
     return `
       <div class="row mt-4 text-center justify-content-center">
-        <div class="col-2"><img src="http://openweathermap.org/img/w/${this.icon}.png" class="img-fluid" alt=""></div>
+        <div class="col-2"><img src="assets/img/svg/${this.icon}.svg" class="img-weather" alt=""></div>
         <div class="col-auto align-self-center"><h2 class="pink">${this.city} - ${f}</h2></div>
 						</div>`
   }
