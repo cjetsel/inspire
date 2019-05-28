@@ -16,64 +16,59 @@ let _subscribers = {
 }
 
 function _setState(prop, data) {
-	_state[prop] = data
-	_subscribers[prop].forEach(fn => fn())
+	_state[prop] = data;
+	_subscribers[prop].forEach(fn => fn());
 }
 
 export default class TodoService {
 	get TodoError() {
-		return _state.error
+		return _state.error;
 	}
+
 	get ToDo() {
-		return _state.todos
+		return _state.todos;
 	}
 
 	addSubscriber(prop, fn) {
-		_subscribers[prop].push(fn)
+		_subscribers[prop].push(fn);
 	}
 
 	getTodos() {
 		todoApi.get()
 			.then(res => {
-				let data = res.data.data.map(d => new ToDo(d))
-				_setState('todos', data)
+				let data = res.data.data.map(d => new ToDo(d));
+				_setState('todos', data);
 			})
-
-			.catch(err => console.error(err))
+			.catch(err => console.error(err));
 	}
 
 	addTodo(todo) {
 		todoApi.post('', todo)
 			.then(res => {
-				let myToDo = new ToDo(res.data.data)
-				_state.todos.push(myToDo)
-				this.getTodos()
+				let myToDo = new ToDo(res.data.data);
+				_state.todos.push(myToDo);
+				this.getTodos();
 			})
-			// .catch(err => _setState('error', err.response.data))
-			.catch(err => console.error(err))
+			.catch(err => console.error(err));
 	}
 
 	toggleTodoStatus(todoId) {
-
-		let todo = _state.todos.find(todo => todo._id == todoId)
-
-		todo.completed = !todo.completed
+		let todo = _state.todos.find(todo => todo._id == todoId);
+		todo.completed = !todo.completed;
 		todoApi.put(todoId, todo)
 			.then(res => {
-				this.getTodos()
+				this.getTodos();
 			})
-			.catch(err => console.error(err))
+			.catch(err => console.error(err));
 	}
 
-
 	removeTodo(todoId) {
-		let todo = _state.todos.find(todo => todo._id == todoId)
-
+		let todo = _state.todos.find(todo => todo._id == todoId);
 		todoApi.delete(todoId, todo)
 			.then(res => {
-				this.getTodos()
+				this.getTodos();
 			})
-			.catch(err => console.error(err))
+			.catch(err => console.error(err));
 	}
 
 }

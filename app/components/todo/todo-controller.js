@@ -7,64 +7,47 @@ function _drawTodos() {
 	let template = '';
 	let templateComplete = '';
 	for (let i = 0; i < toDo.length; i++) {
-		let myToDo = toDo[i]
+		let myToDo = toDo[i];
 		if (!myToDo.completed) {
-			template += myToDo.AddTemplate()
+			template += myToDo.AddTemplate();
 		} else if (myToDo.completed) {
-			templateComplete += myToDo.AddCompletedTemplate()
+			templateComplete += myToDo.AddCompletedTemplate();
 		}
 		document.getElementById('todo-new').innerHTML = template;
 		document.getElementById('todo-complete').innerHTML = templateComplete;
 	}
 }
 
-// function _drawCompletedTodo() {
-// 	let toDo = _todoService.ToDo;
-// 	let template = '';
-// 	for (let i = 0; i < toDo.length; i++) {
-// 		let myToDo = toDo[i]
-// 		template += myToDo.AddCompletedTemplate()
-// 	}
-// 	document.getElementById('todo-complete').innerHTML = template;
-// }
-
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
-
 
 export default class TodoController {
 	constructor() {
-		_todoService.addSubscriber('error', _drawError)
-		_todoService.getTodos()
-		_todoService.addSubscriber('todos', _drawTodos)
-
-		// Don't forget to add your subscriber
+		_todoService.addSubscriber('error', _drawError);
+		_todoService.getTodos();
+		_todoService.addSubscriber('todos', _drawTodos);
 	}
 
 	addTodo(event) {
 		event.preventDefault()
-		var form = event.target
+		var form = event.target;
 		var todo = {
 			description: form.description.value
 		}
-		form.reset()
-		_todoService.addTodo(todo)
+		form.reset();
+		_todoService.addTodo(todo);
 	}
 
 	completeToDo(id) {
-		_todoService.toggleTodoStatus(id)
+		_todoService.toggleTodoStatus(id);
 	}
 
 	toggleTodoStatus(todoId) {
-		_todoService.toggleTodoStatus(todoId)
+		_todoService.toggleTodoStatus(todoId);
 	}
 
 	removeTodo(todoId) {
-		_todoService.removeTodo(todoId)
+		_todoService.removeTodo(todoId);
 	}
-
-
-
 }

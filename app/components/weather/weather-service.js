@@ -15,23 +15,23 @@ let _subscribers = {
 }
 
 function _setState(prop, data) {
-	_state[prop] = data
+	_state[prop] = data;
 	_subscribers[prop].forEach(fn => fn());
 }
 
 
 export default class WeatherService {
 	get Weather() {
-		return _state.weather
+		return _state.weather;
 	}
 
 	addSubscriber(prop, fn) {
-		_subscribers[prop].push(fn)
+		_subscribers[prop].push(fn);
 	}
 
 	getWeather() {
 		weatherApi.get().then(res => {
-			_setState('weather', new Weather(res.data))
+			_setState('weather', new Weather(res.data));
 		})
 	}
 }
